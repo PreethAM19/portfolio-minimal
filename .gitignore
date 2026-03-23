@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+dist
+.turbo
+coverage
+*.log
+tsconfig.tsbuildinfo
+.DS_Store
+Thumbs.db
