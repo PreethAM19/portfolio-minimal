@@ -1,11 +1,12 @@
 # Preetham Raj Ramraj Portfolio
 
-A minimal, dark, project-first personal portfolio built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+A premium, dark, motion-led personal portfolio built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Stack
 
 - Next.js
 - TypeScript
+- React
 - Tailwind CSS
 - Framer Motion
 
@@ -40,6 +41,18 @@ All portfolio content is stored in a single config file:
 - `src/content/portfolio.ts`
 
 This keeps the app easy to extend later with sections like Experience, Education, Certifications, or a Resume link.
+
+Current content areas in the config:
+
+- Hero
+- Stack / Expertise
+- Work Experience
+- Selected Projects
+- Education
+- Certifications
+- Contact
+
+Some fields intentionally remain as placeholders where exact details were not provided yet, including the GitHub profile link, one recent experience entry, and a few certification or education titles.
 
 ## Structure
 

@@ -3,24 +3,53 @@ export type NavItem = {
   href: string;
 };
 
-export type LinkItem = {
+export type HeroStat = {
   label: string;
   value: string;
-  href: string;
+};
+
+export type StackItem = {
+  label: string;
+};
+
+export type ExperienceItem = {
+  period: string;
+  role: string;
+  organization: string;
+  summary: string;
+  impact?: string;
+};
+
+export type ProjectLink = {
+  label: string;
+  href?: string | null;
 };
 
 export type Project = {
   title: string;
-  summary: string;
   description: string;
-  metric: string;
   stack: string[];
-  highlights: string[];
+  links: ProjectLink[];
+  accent: "cool" | "warm";
 };
 
-export type StackGroup = {
+export type EducationItem = {
+  period: string;
   title: string;
-  items: string[];
+  institution: string;
+  detail: string;
+};
+
+export type CertificationItem = {
+  provider: string;
+  title: string;
+  meta: string;
+};
+
+export type ContactLink = {
+  label: string;
+  value: string;
+  href?: string | null;
 };
 
 export const portfolioData = {
@@ -28,160 +57,207 @@ export const portfolioData = {
     name: "Preetham Raj Ramraj",
     title: "Full Stack Developer",
     intro:
-      "I build scalable internal platforms, cloud-backed systems, and practical AI-powered products.",
-    email: "preetham19.raj@gmail.com",
-    phone: "+91 9823178542",
-    linkedin: "https://linkedin.com/in/preetham-raj-ramraj-407408171",
-    linkedinLabel: "linkedin.com/in/preetham-raj-ramraj-407408171",
+      "I build scalable web platforms, cloud-backed systems, and practical AI-powered products.",
   },
   navigation: [
-    { label: "About", href: "#about" },
-    { label: "Work", href: "#selected-work" },
     { label: "Stack", href: "#stack" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Education", href: "#education" },
+    { label: "Certs", href: "#certifications" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   hero: {
-    focusAreas: [
-      "Internal platforms",
-      "Cloud-backed delivery",
-      "Applied AI products",
+    lines: ["Preetham Raj", "Ramraj"],
+    eyebrow: "Premium developer portfolio",
+    focus: [
+      "Scalable platforms",
+      "Cloud-backed systems",
+      "Practical AI products",
     ],
+    description:
+      "Minimal, project-led engineering across frontend, backend, cloud, and applied AI.",
     primaryAction: {
-      label: "View selected work",
-      href: "#selected-work",
+      label: "View projects",
+      href: "#projects",
     },
     secondaryAction: {
-      label: "Email",
-      href: "mailto:preetham19.raj@gmail.com",
+      label: "Get in touch",
+      href: "#contact",
     },
+    stats: [
+      { label: "Featured projects", value: "02" },
+      { label: "Recent experience entries", value: "04" },
+      { label: "Core tools highlighted", value: "11" },
+    ] satisfies HeroStat[],
   },
-  about: {
-    title: "Built for useful products and reliable systems.",
-    summary:
-      "Full stack developer with experience across React, Next.js, FastAPI, PHP, AWS, databases, automation, and internal platform engineering.",
-    detail:
-      "Recent work includes ERP modernization, visitor and asset management systems, cloud infrastructure, and AI-assisted product features.",
-    pillars: [
-      "Frontend to backend ownership",
-      "Operational systems with real-world usage",
-      "Cloud infrastructure with practical automation",
-    ],
+  stack: {
+    eyebrow: "Stack / Expertise",
+    title: "A focused toolkit across product engineering, cloud delivery, and applied AI.",
+    description:
+      "A minimal set of technologies that covers frontend builds, backend systems, deployment, and emerging AI workflows.",
+    items: [
+      { label: "Next.js" },
+      { label: "TypeScript" },
+      { label: "React" },
+      { label: "JavaScript" },
+      { label: "PHP" },
+      { label: "SQL" },
+      { label: "Git" },
+      { label: "Docker" },
+      { label: "AWS" },
+      { label: "AI / ML fundamentals" },
+      { label: "Agentic AI" },
+    ] satisfies StackItem[],
   },
-  projects: [
-    {
-      title: "Visitor Management Platform",
-      summary: "A campus-ready visitor flow with faster, more reliable entry operations.",
-      description:
-        "Built at IIIT-Hyderabad using React, Next.js, FastAPI, Firebase/Firestore, and LDAP SSO. Includes QR entry, webcam capture, planned visits, chatbot support, alerts, and reports.",
-      metric: "40% fewer gate delays",
-      stack: [
-        "React",
-        "Next.js",
-        "FastAPI",
-        "Firebase",
-        "Firestore",
-        "LDAP SSO",
-      ],
-      highlights: [
-        "QR entry",
-        "Webcam capture",
-        "Planned visits",
-        "Alerts",
-        "Reports",
-        "Chatbot support",
-      ],
-    },
-    {
-      title: "ERP Modernization",
-      summary: "Backend-heavy workflow improvements across core internal operations.",
-      description:
-        "Worked on internal ERP systems using FastAPI, Docker, AWS ECS, and database-backed workflows. Improved attendance, leave, billing, and performance across core modules.",
-      metric: "Core workflow uplift",
-      stack: ["FastAPI", "Docker", "AWS ECS", "PostgreSQL", "MySQL"],
-      highlights: [
-        "Attendance",
-        "Leave management",
-        "Billing",
-        "Performance tuning",
-      ],
-    },
-    {
-      title: "AI Chatbot for Sniffi",
-      summary: "In-app conversational support for navigation, booking, and tele-consults.",
-      description:
-        "Built with Python, Mistral LLM, AWS ECS/Lambda, and JWT auth. Integrated into a Flutter app for navigation, booking, and tele-consults.",
-      metric: "Cloud + LLM integration",
-      stack: ["Python", "Mistral LLM", "AWS ECS", "AWS Lambda", "JWT"],
-      highlights: [
-        "Navigation flows",
-        "Booking support",
-        "Tele-consults",
-        "Flutter integration",
-      ],
-    },
-  ] satisfies Project[],
-  stackGroups: [
-    {
-      title: "Frontend",
-      items: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "JavaScript",
-        "Tailwind CSS",
-        "Bootstrap",
-      ],
-    },
-    {
-      title: "Backend",
-      items: ["FastAPI", "PHP", "Laravel", "Node.js", "Python"],
-    },
-    {
-      title: "Cloud",
-      items: ["AWS", "Docker", "ECS", "Lambda", "API Gateway", "GitLab CI/CD"],
-    },
-    {
-      title: "Databases",
-      items: [
-        "MySQL",
-        "PostgreSQL",
-        "MongoDB",
-        "MariaDB",
-        "Firebase",
-        "DynamoDB",
-      ],
-    },
-    {
-      title: "Tools",
-      items: ["Git", "Postman", "OpenCV", "Jupyter", "Tableau"],
-    },
-  ] satisfies StackGroup[],
-  contact: {
-    title: "Let's build something useful.",
-    summary:
-      "Open to conversations around product engineering, internal platforms, cloud systems, and practical AI features.",
-    links: [
+  experience: {
+    eyebrow: "Work Experience",
+    title: "Recent roles shaped around internal products, platform systems, and applied AI.",
+    description:
+      "Structured so titles, organizations, dates, and summaries can be updated quickly later.",
+    items: [
       {
-        label: "Email",
-        value: "preetham19.raj@gmail.com",
-        href: "mailto:preetham19.raj@gmail.com",
+        period: "Recent",
+        role: "Full Stack Developer",
+        organization: "IIIT Hyderabad",
+        summary:
+          "Built visitor and internal platform workflows with QR entry, SSO, alerts, reporting, and operational automation.",
+        impact: "Visitor systems",
       },
+      {
+        period: "Recent",
+        role: "Platform Engineer",
+        organization: "ERP modernization work",
+        summary:
+          "Improved attendance, leave, billing, and performance across database-backed ERP modules and deployment workflows.",
+        impact: "ERP systems",
+      },
+      {
+        period: "Recent",
+        role: "AI Product Developer",
+        organization: "Sniffi",
+        summary:
+          "Shipped a secure LLM-powered assistant for navigation, booking, and tele-consults inside a product experience.",
+        impact: "Applied AI",
+      },
+      {
+        period: "Add date range",
+        role: "Role title to update",
+        organization: "Organization to update",
+        summary:
+          "Add a concise one-line summary here for the fourth recent experience entry.",
+        impact: "Placeholder",
+      },
+    ] satisfies ExperienceItem[],
+  },
+  projects: {
+    eyebrow: "Selected Projects",
+    title: "Two recent builds with product depth, systems thinking, and production focus.",
+    description:
+      "Compact project cards with room for GitHub, live links, or a case study whenever those are available.",
+    items: [
+      {
+        title: "Visitor Management Platform",
+        description:
+          "A campus-ready visitor flow with QR entry, webcam capture, planned visits, alerts, reports, and LDAP-backed access control.",
+        stack: ["Next.js", "React", "FastAPI", "Firebase", "Firestore", "LDAP"],
+        links: [
+          { label: "GitHub", href: null },
+          { label: "Live", href: null },
+          { label: "Case Study", href: null },
+        ],
+        accent: "cool",
+      },
+      {
+        title: "AI Chatbot for Sniffi",
+        description:
+          "An authenticated AI assistant for navigation, booking, and tele-consults, integrated into a Flutter app with cloud-backed services.",
+        stack: ["Python", "Mistral LLM", "AWS ECS", "Lambda", "JWT"],
+        links: [
+          { label: "GitHub", href: null },
+          { label: "Live", href: null },
+          { label: "Case Study", href: null },
+        ],
+        accent: "warm",
+      },
+    ] satisfies Project[],
+  },
+  education: {
+    eyebrow: "Education",
+    title: "An evolving path across software engineering, AI, and deployment practice.",
+    items: [
+      {
+        period: "Academic",
+        title: "Degree details to update",
+        institution: "University of Wisconsin-Madison",
+        detail: "University of Wisconsin-Madison degree entry ready for the exact program title.",
+      },
+      {
+        period: "Current",
+        title: "PG Program in AI/ML and Agentic AI",
+        institution: "IIIT Hyderabad",
+        detail: "Current postgraduate program focused on AI, ML systems, and agentic workflows.",
+      },
+      {
+        period: "Continuing",
+        title: "MLOps Specialization",
+        institution: "Specialization track",
+        detail: "Production-minded learning around deployment, lifecycle management, and model operations.",
+      },
+    ] satisfies EducationItem[],
+  },
+  certifications: {
+    eyebrow: "Certifications",
+    title: "A small, editable layer for credentials and ongoing learning.",
+    items: [
+      {
+        provider: "AWS",
+        title: "Certification title to update",
+        meta: "Cloud systems",
+      },
+      {
+        provider: "Google",
+        title: "Certification title to update",
+        meta: "AI / ML",
+      },
+      {
+        provider: "Udemy",
+        title: "Course title to update",
+        meta: "Hands-on depth",
+      },
+    ] satisfies CertificationItem[],
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: "Built for product teams, internal platforms, and practical AI work.",
+    description:
+      "Reach out for product engineering, platform systems, cloud-backed delivery, or AI-assisted features.",
+    links: [
       {
         label: "LinkedIn",
         value: "linkedin.com/in/preetham-raj-ramraj-407408171",
         href: "https://linkedin.com/in/preetham-raj-ramraj-407408171",
       },
       {
-        label: "Phone",
-        value: "+91 9823178542",
-        href: "tel:+919823178542",
+        label: "GitHub",
+        value: "Add GitHub profile link",
+        href: null,
       },
-    ] satisfies LinkItem[],
+      {
+        label: "Email",
+        value: "preetham19.raj@gmail.com",
+        href: "mailto:preetham19.raj@gmail.com",
+      },
+    ] satisfies ContactLink[],
   },
 } as const;
 
 export type PortfolioData = typeof portfolioData;
 export type PersonInfo = PortfolioData["person"];
 export type HeroContent = PortfolioData["hero"];
-export type AboutContent = PortfolioData["about"];
+export type StackContent = PortfolioData["stack"];
+export type ExperienceContent = PortfolioData["experience"];
+export type ProjectsContent = PortfolioData["projects"];
+export type EducationContent = PortfolioData["education"];
+export type CertificationsContent = PortfolioData["certifications"];
 export type ContactContent = PortfolioData["contact"];

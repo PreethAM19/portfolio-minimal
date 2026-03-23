@@ -17,12 +17,12 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <FadeIn className={className}>
-      <p className="mb-5 text-[11px] uppercase tracking-[0.35em] text-white/[0.45]">
+      <p className="mb-5 text-[10px] uppercase tracking-[0.34em] text-white/[0.42]">
         {eyebrow}
       </p>
       <h2
         className={cn(
-          "max-w-xl font-display text-balance text-3xl font-medium leading-[0.98] tracking-[-0.04em] text-ink sm:text-4xl lg:text-[2.75rem]",
+          "max-w-2xl font-display text-balance text-3xl font-medium leading-[1.02] tracking-[-0.05em] text-ink sm:text-4xl lg:text-[3rem]",
         )}
       >
         {title}
