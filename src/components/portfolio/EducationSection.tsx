@@ -40,9 +40,11 @@ export function EducationSection({ education }: EducationSectionProps) {
                     <Tag>{item.period}</Tag>
                   </div>
 
-                  <p className="mt-6 max-w-2xl text-pretty text-base leading-7 text-white/[0.76]">
-                    {item.detail}
-                  </p>
+                  {item.detail ? (
+                    <p className="mt-6 max-w-2xl text-pretty text-base leading-7 text-white/[0.76]">
+                      {item.detail}
+                    </p>
+                  ) : null}
                 </InteractiveSurface>
               </StaggerItem>
             ))}
@@ -52,4 +54,3 @@ export function EducationSection({ education }: EducationSectionProps) {
     </section>
   );
 }
-

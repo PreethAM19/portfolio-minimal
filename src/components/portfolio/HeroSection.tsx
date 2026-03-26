@@ -1,10 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import type { HeroContent, PersonInfo } from "@/content/portfolio";
 
 import { Container } from "@/components/ui/Container";
 import { InteractiveSurface } from "@/components/ui/InteractiveSurface";
-import { FadeIn, RevealText, Stagger, StaggerItem } from "@/components/ui/motion";
+import { FadeIn, RevealText } from "@/components/ui/motion";
 import { Tag } from "@/components/ui/Tag";
 
 type HeroSectionProps = {
@@ -18,32 +19,26 @@ export function HeroSection({ person, hero }: HeroSectionProps) {
       <Container>
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(340px,0.8fr)] lg:items-end lg:gap-12">
           <div className="max-w-5xl">
-            <FadeIn delay={0.08}>
-              <p className="mb-5 text-[10px] uppercase tracking-[0.36em] text-white/[0.42]">
-                {hero.eyebrow}
-              </p>
-            </FadeIn>
-
             <RevealText
               as="h1"
               text={hero.lines}
-              delay={0.14}
-              className="font-display text-[clamp(3.7rem,11vw,8.2rem)] font-semibold leading-[0.9] tracking-[-0.07em] text-ink"
+              delay={0.1}
+              className="font-display text-[clamp(3.25rem,9.4vw,6.9rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-ink"
             />
 
-            <FadeIn delay={0.36}>
+            <FadeIn delay={0.28}>
               <p className="mt-7 text-base uppercase tracking-[0.28em] text-white/[0.56] sm:text-[0.9rem]">
                 {person.title}
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.44}>
-              <p className="mt-7 max-w-2xl text-balance text-lg leading-8 text-muted sm:text-xl">
+            <FadeIn delay={0.36}>
+              <p className="mt-7 max-w-3xl text-pretty text-lg leading-8 text-muted sm:text-[1.05rem]">
                 {person.intro}
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.52}>
+            <FadeIn delay={0.44}>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
                   href={hero.primaryAction.href}
@@ -53,6 +48,8 @@ export function HeroSection({ person, hero }: HeroSectionProps) {
                 </Link>
                 <Link
                   href={hero.secondaryAction.href}
+                  target={hero.secondaryAction.href.endsWith(".pdf") ? "_blank" : undefined}
+                  rel={hero.secondaryAction.href.endsWith(".pdf") ? "noreferrer" : undefined}
                   className="rounded-full border border-white/10 px-5 py-3 text-sm font-medium text-white/[0.72] transition hover:border-white/20 hover:text-white"
                 >
                   {hero.secondaryAction.label}
@@ -75,33 +72,30 @@ export function HeroSection({ person, hero }: HeroSectionProps) {
                     <Tag key={item}>{item}</Tag>
                   ))}
                 </div>
-                <p className="mt-7 text-base leading-7 text-white/[0.78]">
-                  {hero.description}
-                </p>
               </InteractiveSurface>
             </FadeIn>
 
-            <Stagger className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1" delay={0.32}>
-              {hero.stats.map((stat) => (
-                <StaggerItem key={stat.label}>
-                  <InteractiveSurface
-                    glow="cool"
-                    className="ambient-ring rounded-[1.6rem] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md"
-                  >
-                    <p className="text-[10px] uppercase tracking-[0.34em] text-white/[0.4]">
-                      {stat.label}
-                    </p>
-                    <p className="mt-4 font-display text-3xl tracking-[-0.06em] text-white">
-                      {stat.value}
-                    </p>
-                  </InteractiveSurface>
-                </StaggerItem>
-              ))}
-            </Stagger>
+            <FadeIn delay={0.36}>
+              <InteractiveSurface
+                glow="cool"
+                className="ambient-ring overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-3 backdrop-blur-md"
+              >
+                <div className="relative aspect-[4/4.8] overflow-hidden rounded-[1.55rem]">
+                  <Image
+                    src={hero.photo.src}
+                    alt={hero.photo.alt}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 420px"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),transparent_28%,rgba(5,6,8,0.28)_100%)]" />
+                </div>
+              </InteractiveSurface>
+            </FadeIn>
           </div>
         </div>
       </Container>
     </section>
   );
 }
-

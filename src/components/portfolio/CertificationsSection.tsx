@@ -44,8 +44,9 @@ export function CertificationsSection({
                     {item.provider.slice(0, 1)}
                   </span>
                 </div>
-
-                <p className="mt-6 text-sm text-white/[0.46]">{item.meta}</p>
+                {item.meta ? (
+                  <p className="mt-6 text-sm text-white/[0.46]">{item.meta}</p>
+                ) : null}
               </InteractiveSurface>
             </StaggerItem>
           ))}
@@ -54,4 +55,3 @@ export function CertificationsSection({
     </section>
   );
 }
-

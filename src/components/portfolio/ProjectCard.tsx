@@ -35,7 +35,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       glow={accent.glow}
       className="ambient-ring h-full rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md sm:p-8"
     >
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_11rem] lg:items-start">
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_12.5rem] xl:items-start xl:gap-8">
         <div>
           <p className="text-[10px] uppercase tracking-[0.34em] text-white/[0.42]">
             Project {String(index + 1).padStart(2, "0")}
@@ -76,20 +76,72 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
 
-        <div className="relative hidden h-44 lg:block">
-          <div className="absolute inset-0 rounded-[2rem] border border-white/10 bg-white/[0.02]" />
-          <div
-            className={`absolute inset-0 rounded-[2rem] border border-white/10 ${accent.outer}`}
-          />
-          <div
-            className={`absolute inset-5 rounded-[1.4rem] border border-white/10 ${accent.inner}`}
-          />
-          <div className="absolute inset-[30%] rounded-full border border-white/10" />
-          <div className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-          <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        </div>
+        <ProjectVisual visual={project.visual} accent={accent} />
       </div>
     </InteractiveSurface>
   );
 }
 
+function ProjectVisual({
+  visual,
+  accent,
+}: {
+  visual: Project["visual"];
+  accent: {
+    outer: string;
+    inner: string;
+  };
+}) {
+  if (visual === "visitor") {
+    return (
+      <div className="relative h-44 sm:h-48">
+        <div className="absolute inset-0 rounded-[2rem] border border-white/10 bg-white/[0.02]" />
+        <div className={`absolute inset-0 rounded-[2rem] border border-white/10 ${accent.outer}`} />
+        <div className={`absolute inset-6 rounded-[1.35rem] border border-white/10 ${accent.inner}`} />
+        <div className="absolute left-1/2 top-7 h-12 w-12 -translate-x-1/2 rounded-full border border-white/10 bg-white/[0.04]" />
+        <div className="absolute left-1/2 top-16 h-16 w-px -translate-x-1/2 bg-gradient-to-b from-white/30 to-transparent" />
+        <div className="absolute bottom-8 left-1/2 grid w-16 -translate-x-1/2 grid-cols-4 gap-1">
+          {Array.from({ length: 16 }).map((_, index) => (
+            <span key={index} className="aspect-square rounded-[2px] bg-white/[0.14]" />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (visual === "sniffi") {
+    return (
+      <div className="relative h-44 sm:h-48">
+        <div className="absolute inset-0 rounded-[2rem] border border-white/10 bg-white/[0.02]" />
+        <div className={`absolute inset-0 rounded-[2rem] border border-white/10 ${accent.outer}`} />
+        <div className="absolute left-6 top-8 right-12 rounded-[1.2rem] border border-white/10 bg-white/[0.05] px-4 py-3 text-xs text-white/[0.66]">
+          Navigation
+        </div>
+        <div className="absolute left-14 top-24 right-6 rounded-[1.2rem] border border-white/10 bg-white/[0.04] px-4 py-3 text-xs text-white/[0.58]">
+          Booking + tele-consults
+        </div>
+        <div className="absolute inset-y-12 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/22 to-transparent" />
+        <div className="absolute bottom-7 left-1/2 h-12 w-12 -translate-x-1/2 rounded-full border border-white/10 bg-white/[0.04]" />
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative h-44 sm:h-48">
+      <div className="absolute inset-0 rounded-[2rem] border border-white/10 bg-white/[0.02]" />
+      <div className={`absolute inset-0 rounded-[2rem] border border-white/10 ${accent.outer}`} />
+      <div className={`absolute inset-6 rounded-[1.35rem] border border-white/10 ${accent.inner}`} />
+      <div className="absolute inset-x-10 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-white/22 to-transparent" />
+      <div className="absolute bottom-9 left-8 right-8 flex items-end justify-between gap-1">
+        {[32, 18, 42, 26, 48, 22, 36].map((height, index) => (
+          <span
+            key={index}
+            className="w-3 rounded-full bg-white/[0.18]"
+            style={{ height }}
+          />
+        ))}
+      </div>
+      <div className="absolute right-8 top-8 h-16 w-16 rounded-full border border-white/10" />
+    </div>
+  );
+}

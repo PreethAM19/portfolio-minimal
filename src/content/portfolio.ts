@@ -3,11 +3,6 @@ export type NavItem = {
   href: string;
 };
 
-export type HeroStat = {
-  label: string;
-  value: string;
-};
-
 export type StackItem = {
   label: string;
 };
@@ -16,8 +11,8 @@ export type ExperienceItem = {
   period: string;
   role: string;
   organization: string;
-  summary: string;
-  impact?: string;
+  location: string;
+  highlights: string[];
 };
 
 export type ProjectLink = {
@@ -31,19 +26,20 @@ export type Project = {
   stack: string[];
   links: ProjectLink[];
   accent: "cool" | "warm";
+  visual: "visitor" | "sniffi" | "voice";
 };
 
 export type EducationItem = {
   period: string;
   title: string;
   institution: string;
-  detail: string;
+  detail?: string;
 };
 
 export type CertificationItem = {
   provider: string;
   title: string;
-  meta: string;
+  meta?: string;
 };
 
 export type ContactLink = {
@@ -55,47 +51,43 @@ export type ContactLink = {
 export const portfolioData = {
   person: {
     name: "Preetham Raj Ramraj",
-    title: "Full Stack Developer",
+    title: "Full-Stack Engineer | AI Product, LLM & Agentic Workflows",
     intro:
-      "I build scalable web platforms, cloud-backed systems, and practical AI-powered products.",
+      "Full-Stack Engineer with 5+ years of experience building production web platforms, cloud-native systems, and AI-powered product features using Next.js, TypeScript, Python, FastAPI, AWS, and Docker. Experienced in LLM integration, LangGraph-based agentic workflows, document parsing, structured extraction, and scalable full-stack delivery across startup and enterprise environments.",
   },
   navigation: [
     { label: "Stack", href: "#stack" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
-    { label: "Certs", href: "#certifications" },
+    { label: "Certifications", href: "#certifications" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   hero: {
     lines: ["Preetham Raj", "Ramraj"],
-    eyebrow: "Premium developer portfolio",
     focus: [
-      "Scalable platforms",
-      "Cloud-backed systems",
-      "Practical AI products",
+      "Agentic AI Products and workflows",
+      "MLOps",
+      "Full Stack applications",
     ],
-    description:
-      "Minimal, project-led engineering across frontend, backend, cloud, and applied AI.",
     primaryAction: {
       label: "View projects",
       href: "#projects",
     },
     secondaryAction: {
-      label: "Get in touch",
-      href: "#contact",
+      label: "Resume",
+      href: "/resume_PR26.pdf",
     },
-    stats: [
-      { label: "Featured projects", value: "02" },
-      { label: "Recent experience entries", value: "04" },
-      { label: "Core tools highlighted", value: "11" },
-    ] satisfies HeroStat[],
+    photo: {
+      src: "/preetham-portrait.png",
+      alt: "Preetham Raj Ramraj portrait",
+    },
   },
   stack: {
     eyebrow: "Stack / Expertise",
     title: "A focused toolkit across product engineering, cloud delivery, and applied AI.",
     description:
-      "A minimal set of technologies that covers frontend builds, backend systems, deployment, and emerging AI workflows.",
+      "A compact stack spanning product UI, backend systems, cloud-native delivery, LLM integration, and production AI workflows.",
     items: [
       { label: "Next.js" },
       { label: "TypeScript" },
@@ -106,60 +98,93 @@ export const portfolioData = {
       { label: "Git" },
       { label: "Docker" },
       { label: "AWS" },
-      { label: "AI / ML fundamentals" },
       { label: "Agentic AI" },
+      { label: "LangChain/LangGraph" },
+      { label: "LLM Integrations" },
+      { label: "SciKit-Learn" },
+      { label: "PyTorch" },
     ] satisfies StackItem[],
   },
   experience: {
     eyebrow: "Work Experience",
-    title: "Recent roles shaped around internal products, platform systems, and applied AI.",
+    title: "Experience across AI product, enterprise SaaS, startup delivery, and cloud-native engineering.",
     description:
-      "Structured so titles, organizations, dates, and summaries can be updated quickly later.",
+      "Resume-aligned roles spanning AI products, internal platforms, cloud automation, and frontend delivery.",
     items: [
       {
-        period: "Recent",
-        role: "Full Stack Developer",
+        period: "Nov 2025 - Present",
+        role: "AI Lead / Full-Stack Engineer",
+        organization: "UPSY",
+        location: "Remote",
+        highlights: [
+          "Defined and shipped four core AI features from zero: course recommender, readiness and experience-fit scoring, resume-brochure parsing, and bridge-learning paths using LangGraph-based agentic workflows and structured LLM extraction.",
+          "Designed OCR and document parsing pipelines with PaddleOCR-VL plus LLM-assisted extraction to normalize resumes and brochures into structured skill signals with validation and confidence scoring.",
+          "Led full-stack delivery across Next.js and TypeScript frontend, Python and FastAPI AI services, and Prisma-backed models while running Agile sprint cycles with product stakeholders.",
+        ],
+      },
+      {
+        period: "Oct 2023 - Present",
+        role: "Senior Software Engineer",
         organization: "IIIT Hyderabad",
-        summary:
-          "Built visitor and internal platform workflows with QR entry, SSO, alerts, reporting, and operational automation.",
-        impact: "Visitor systems",
+        location: "Hyderabad, India",
+        highlights: [
+          "Built an in-house Visitor Management Platform with Next.js, React, FastAPI, Firebase / Firestore, and LDAP SSO, replacing a commercial tool and reducing gate processing delays by 40%.",
+          "Replaced a slow monolithic ERP with FastAPI and Docker microservices on AWS ECS, cutting page-load time by 2x and reducing release bottlenecks across attendance, leave, and billing modules.",
+          "Engineered QR-based asset tracking, billing, event, and payment workflows across AWS Lambda, API Gateway, DynamoDB, SES, Razorpay, and GitLab CI/CD, improving billing turnaround and audit efficiency.",
+        ],
       },
       {
-        period: "Recent",
-        role: "Platform Engineer",
-        organization: "ERP modernization work",
-        summary:
-          "Improved attendance, leave, billing, and performance across database-backed ERP modules and deployment workflows.",
-        impact: "ERP systems",
-      },
-      {
-        period: "Recent",
-        role: "AI Product Developer",
+        period: "Jan 2025 - Present",
+        role: "Full-Stack Lead / AI Consultant",
         organization: "Sniffi",
-        summary:
-          "Shipped a secure LLM-powered assistant for navigation, booking, and tele-consults inside a product experience.",
-        impact: "Applied AI",
+        location: "Remote",
+        highlights: [
+          "Led architecture and delivery of an AI-powered chatbot with prompt flows, intent routing, and fallback logic using a Python and Mistral LLM backend on AWS ECS and Lambda with JWT-authenticated APIs.",
+          "Integrated the chatbot into a Flutter app for navigation, booking, and tele-consults, coordinating backend architecture, LLM design, and client delivery end to end in three months.",
+        ],
       },
       {
-        period: "Add date range",
-        role: "Role title to update",
-        organization: "Organization to update",
-        summary:
-          "Add a concise one-line summary here for the fourth recent experience entry.",
-        impact: "Placeholder",
+        period: "Jun 2021 - Jul 2023",
+        role: "RF Engineer II - Automation & Cloud Integration",
+        organization: "Samsung Electronics America",
+        location: "Plano, TX",
+        highlights: [
+          "Pivoted from RF operations into Python and cloud automation, cutting manual processing time by 90% through Python, shell, and VBA automation.",
+          "Developed cloud-integrated verification workflows across FTP and AWS S3, shortening migration validation cycles by about 50% while improving data integrity checks.",
+          "Resolved recurring LTE and 5G configuration failures across TX and OK markets, improving deployment stability by 15%.",
+        ],
+      },
+      {
+        period: "Aug 2020 - Jun 2021",
+        role: "Application Developer",
+        organization: "Innovative Consulting Solutions, LLC",
+        location: "Chicago, IL",
+        highlights: [
+          "Built React and Node.js dashboards with Firebase-backed web features, improving page-load performance by two seconds across key workflows.",
+          "Implemented secure Auth0-based authentication and reusable tested frontend components with Jest and Cypress, reducing deployment defects by 30%.",
+        ],
+      },
+      {
+        period: "May 2020 - Aug 2020",
+        role: "Junior Web Developer (Contract)",
+        organization: "Commonwealth Bank",
+        location: "New York, NY",
+        highlights: [
+          "Built and optimized React-based banking UI features and prototypes using JavaScript, HTML/CSS, and Bootstrap for youth-focused digital banking experiences.",
+        ],
       },
     ] satisfies ExperienceItem[],
   },
   projects: {
     eyebrow: "Selected Projects",
-    title: "Two recent builds with product depth, systems thinking, and production focus.",
+    title: "Selected builds spanning operations, AI assistants, and voice-first experimentation.",
     description:
-      "Compact project cards with room for GitHub, live links, or a case study whenever those are available.",
+      "Current highlight work from the latest resume, with room to attach GitHub, live links, or deeper case studies later.",
     items: [
       {
         title: "Visitor Management Platform",
         description:
-          "A campus-ready visitor flow with QR entry, webcam capture, planned visits, alerts, reports, and LDAP-backed access control.",
+          "Built an in-house Visitor Management Platform using Next.js, React, FastAPI, Firebase / Firestore, and LDAP SSO to replace a commercial solution, reducing gate processing delays by 40%.",
         stack: ["Next.js", "React", "FastAPI", "Firebase", "Firestore", "LDAP"],
         links: [
           { label: "GitHub", href: null },
@@ -167,6 +192,7 @@ export const portfolioData = {
           { label: "Case Study", href: null },
         ],
         accent: "cool",
+        visual: "visitor",
       },
       {
         title: "AI Chatbot for Sniffi",
@@ -179,59 +205,73 @@ export const portfolioData = {
           { label: "Case Study", href: null },
         ],
         accent: "warm",
+        visual: "sniffi",
+      },
+      {
+        title: "Voice AI Prototypes",
+        description:
+          "Built voice-enabled assistant prototypes including an Amazon Alexa voice assistant and a voice-based selector interface for guided interactions and retrieval-driven user flows using LLM backends.",
+        stack: ["Alexa", "Python", "LLMs", "Prompt Flows", "Voice Interfaces"],
+        links: [
+          { label: "GitHub", href: null },
+          { label: "Live", href: null },
+          { label: "Case Study", href: null },
+        ],
+        accent: "cool",
+        visual: "voice",
       },
     ] satisfies Project[],
   },
   education: {
     eyebrow: "Education",
-    title: "An evolving path across software engineering, AI, and deployment practice.",
+    title: "Formal training across computer science, applied AI, and production MLOps.",
     items: [
       {
-        period: "Academic",
-        title: "Degree details to update",
-        institution: "University of Wisconsin-Madison",
-        detail: "University of Wisconsin-Madison degree entry ready for the exact program title.",
-      },
-      {
-        period: "Current",
-        title: "PG Program in AI/ML and Agentic AI",
+        period: "Ongoing",
+        title: "PG Program - AI/ML, Agentic AI & MLOps",
         institution: "IIIT Hyderabad",
-        detail: "Current postgraduate program focused on AI, ML systems, and agentic workflows.",
+        detail: "",
       },
       {
-        period: "Continuing",
-        title: "MLOps Specialization",
-        institution: "Specialization track",
-        detail: "Production-minded learning around deployment, lifecycle management, and model operations.",
+        period: "Completed",
+        title: "B.S. Computer Science, Minor in Entrepreneurship",
+        institution: "University of Wisconsin-Madison",
+        detail: "",
+      },
+      {
+        period: "Completed",
+        title: "B.Tech Computer Science",
+        institution: "Manipal Academy of Higher Education",
+        detail: "",
       },
     ] satisfies EducationItem[],
   },
   certifications: {
     eyebrow: "Certifications",
-    title: "A small, editable layer for credentials and ongoing learning.",
+    title: "Current certifications aligned with cloud, AI, and delivery practice.",
     items: [
       {
         provider: "AWS",
-        title: "Certification title to update",
-        meta: "Cloud systems",
+        title: "AWS Certified Cloud Practitioner",
+        meta: "",
       },
       {
         provider: "Google",
-        title: "Certification title to update",
-        meta: "AI / ML",
+        title: "Google AI Essentials",
+        meta: "",
       },
       {
-        provider: "Udemy",
-        title: "Course title to update",
-        meta: "Hands-on depth",
+        provider: "Agile",
+        title: "Agile Project Management & Delivery (Certified)",
+        meta: "",
       },
     ] satisfies CertificationItem[],
   },
   contact: {
     eyebrow: "Contact",
-    title: "Built for product teams, internal platforms, and practical AI work.",
+    title: "Open to AI product, platform engineering, and full-stack delivery work.",
     description:
-      "Reach out for product engineering, platform systems, cloud-backed delivery, or AI-assisted features.",
+      "Reach out for AI product builds, platform systems, cloud-native engineering, or full-stack product work.",
     links: [
       {
         label: "LinkedIn",
@@ -240,8 +280,8 @@ export const portfolioData = {
       },
       {
         label: "GitHub",
-        value: "Add GitHub profile link",
-        href: null,
+        value: "github.com/PreethAM19",
+        href: "https://github.com/PreethAM19",
       },
       {
         label: "Email",

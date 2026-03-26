@@ -40,17 +40,24 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
                       <p className="mt-2 text-sm uppercase tracking-[0.26em] text-white/[0.45]">
                         {item.organization}
                       </p>
+                      <p className="mt-2 text-xs uppercase tracking-[0.24em] text-white/[0.34]">
+                        {item.location}
+                      </p>
                     </div>
                     <Tag>{item.period}</Tag>
                   </div>
 
-                  <p className="mt-6 max-w-2xl text-pretty text-base leading-7 text-white/[0.76]">
-                    {item.summary}
-                  </p>
-
-                  {item.impact ? (
-                    <p className="mt-6 text-sm text-white/[0.42]">{item.impact}</p>
-                  ) : null}
+                  <ul className="mt-6 space-y-3">
+                    {item.highlights.map((highlight) => (
+                      <li
+                        key={highlight}
+                        className="relative pl-4 text-pretty text-sm leading-7 text-white/[0.76] sm:text-base"
+                      >
+                        <span className="absolute left-0 top-3 h-1.5 w-1.5 rounded-full bg-white/[0.38]" />
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
                 </InteractiveSurface>
               </StaggerItem>
             ))}
@@ -60,4 +67,3 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
     </section>
   );
 }
-

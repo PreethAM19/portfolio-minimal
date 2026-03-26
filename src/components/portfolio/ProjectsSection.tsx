@@ -21,7 +21,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           description={projects.description}
         />
 
-        <Stagger className="mt-12 grid gap-4 lg:grid-cols-2">
+        <Stagger className="mt-12 grid gap-4 lg:grid-cols-2 2xl:grid-cols-3">
           {projects.items.map((project, index) => (
             <StaggerItem key={project.title}>
               <ProjectCard project={project} index={index} />
