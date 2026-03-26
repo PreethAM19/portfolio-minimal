@@ -5,10 +5,47 @@ import { MotionProvider } from "@/components/ui/motion";
 
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "Preetham Raj Ramraj | Full Stack Developer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Preetham Raj Ramraj | Full-Stack Engineer",
+    template: "%s | Preetham Raj Ramraj",
+  },
   description:
-    "A premium one-page portfolio for Preetham Raj Ramraj, focused on scalable platforms, cloud-backed systems, and practical AI-powered products.",
+    "Full-Stack Engineer building production web platforms, cloud-native systems, and AI-powered product features across Next.js, TypeScript, Python, FastAPI, AWS, and Docker.",
+  applicationName: "Preetham Raj Ramraj Portfolio",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: "Preetham Raj Ramraj | Full-Stack Engineer",
+    description:
+      "Portfolio for Preetham Raj Ramraj, focused on full-stack engineering, cloud-native systems, LLM integrations, and agentic AI workflows.",
+    siteName: "Preetham Raj Ramraj Portfolio",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Preetham Raj Ramraj portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Preetham Raj Ramraj | Full-Stack Engineer",
+    description:
+      "Portfolio for Preetham Raj Ramraj, focused on full-stack engineering, cloud-native systems, LLM integrations, and agentic AI workflows.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export const viewport: Viewport = {

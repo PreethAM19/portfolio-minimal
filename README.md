@@ -68,4 +68,57 @@ src/
 
 ## Deployment
 
-This project is ready to deploy on Vercel or any platform that supports Next.js.
+This project is ready to deploy on Vercel and that is the best free option for this stack.
+
+### Vercel deployment steps
+
+1. Push the latest code to GitHub:
+
+```bash
+git add .
+git commit -m "Prepare portfolio for deployment"
+git push origin main
+```
+
+2. Go to [Vercel](https://vercel.com/) and sign in with GitHub.
+
+3. Click `Add New...` -> `Project`.
+
+4. Import this repository:
+
+- `PreethAM19/portfolio-minimal`
+
+5. Keep the default Vercel settings for Next.js:
+
+- Framework Preset: `Next.js`
+- Build Command: `npm run build`
+- Output Directory: leave empty
+
+6. Click `Deploy`.
+
+7. After the first production deploy, copy your live URL. It will look like:
+
+- `https://portfolio-minimal-xxxxx.vercel.app`
+
+8. In Vercel project settings, add an environment variable so metadata and link previews use your real production URL:
+
+- Name: `NEXT_PUBLIC_SITE_URL`
+- Value: your production site URL, for example `https://portfolio-minimal-xxxxx.vercel.app`
+
+9. Redeploy once after adding that variable.
+
+### Optional custom domain
+
+If you later buy a custom domain, add it in:
+
+- `Project` -> `Settings` -> `Domains`
+
+Then update `NEXT_PUBLIC_SITE_URL` to that custom domain and redeploy.
+
+### Best places to use the live link
+
+- LinkedIn `Featured`
+- LinkedIn `Contact Info`
+- Resume header
+- GitHub profile bio or pinned repo
+- Email signature

@@ -80,7 +80,7 @@ export const portfolioData = {
       href: "/resume_PR26.pdf",
     },
     photo: {
-      src: "/preetham-portrait.png",
+      src: "/preetham-potrait-enhanced.jpeg",
       alt: "Preetham Raj Ramraj portrait",
     },
   },
