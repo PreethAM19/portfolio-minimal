@@ -66,9 +66,9 @@ export const portfolioData = {
   hero: {
     lines: ["Preetham Raj", "Ramraj"],
     focus: [
+      "Full Stack applications",
       "Agentic AI Products and workflows",
       "MLOps",
-      "Full Stack applications",
     ],
     primaryAction: {
       label: "View projects",
@@ -85,9 +85,9 @@ export const portfolioData = {
   },
   stack: {
     eyebrow: "Stack / Expertise",
-    title: "A focused toolkit across product engineering, cloud delivery, and applied AI.",
+    title: "A focused toolkit across full stack engineering, agile delivery, and applied AI.",
     description:
-      "A compact stack spanning product UI, backend systems, cloud-native delivery, LLM integration, and production AI workflows.",
+      "",
     items: [
       { label: "Next.js" },
       { label: "TypeScript" },
@@ -107,9 +107,9 @@ export const portfolioData = {
   },
   experience: {
     eyebrow: "Work Experience",
-    title: "Experience across AI product, enterprise SaaS, startup delivery, and cloud-native engineering.",
+    title: "Experience across full-stack development, AI product, enterprise SaaS, ERP, startup delivery, and cloud-native engineering.",
     description:
-      "Resume-aligned roles spanning AI products, internal platforms, cloud automation, and frontend delivery.",
+      "",
     items: [
       {
         period: "Nov 2025 - Present",
@@ -179,13 +179,13 @@ export const portfolioData = {
     eyebrow: "Selected Projects",
     title: "Selected builds spanning operations, AI assistants, and voice-first experimentation.",
     description:
-      "Current highlight work from the latest resume, with room to attach GitHub, live links, or deeper case studies later.",
+      "",
     items: [
       {
         title: "Visitor Management Platform",
         description:
           "Built an in-house visitor platform with Next.js, FastAPI, Firebase / Firestore, and LDAP SSO, replacing a commercial system and reducing gate delays by 40%.",
-        stack: ["Next.js", "React", "FastAPI", "Firebase", "Firestore", "LDAP"],
+        stack: ["Next.js", "React", "FastAPI", "Firebase", "Python", "PHP","LDAP"],
         links: [
           { label: "GitHub", href: null },
           { label: "Live", href: null },
@@ -211,7 +211,7 @@ export const portfolioData = {
         title: "Voice AI Prototypes",
         description:
           "Built voice-driven prototypes including an Alexa assistant and selector interface for guided, retrieval-backed interactions with LLM-powered flows.",
-        stack: ["Alexa", "Python", "LLMs", "Prompt Flows", "Voice Interfaces"],
+        stack: ["Alexa", "Python", "MFCC Feature Extraction", "CNN", "PyTorch"],
         links: [
           { label: "GitHub", href: null },
           { label: "Live", href: null },
@@ -248,11 +248,11 @@ export const portfolioData = {
   },
   certifications: {
     eyebrow: "Certifications",
-    title: "Current certifications aligned with cloud, AI, and delivery practice.",
+    title: "Current certifications aligned with Gen AI, Agentic workflows, MCP, and delivery practice.",
     items: [
       {
-        provider: "AWS",
-        title: "AWS Certified Cloud Practitioner",
+        provider: "Microsoft",
+        title: "Microsoft Generative AI Engineering",
         meta: "",
       },
       {
@@ -269,9 +269,9 @@ export const portfolioData = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Open to AI product, platform engineering, and full-stack delivery work.",
+    title: "Open to work in full-stack delivery work, AI product builds, and platform systems.",
     description:
-      "Reach out for AI product builds, platform systems, cloud-native engineering, or full-stack product work.",
+      "",
     links: [
       {
         label: "LinkedIn",
