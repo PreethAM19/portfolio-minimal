@@ -58,16 +58,16 @@ export function HeroSection({ person, hero }: HeroSectionProps) {
             </FadeIn>
           </div>
 
-          <div className="grid gap-4 sm:gap-5 lg:h-full lg:max-w-[21.75rem] lg:justify-self-end lg:grid-rows-[auto_minmax(0,1fr)]">
+          <div className="grid gap-3.5 sm:gap-4 lg:h-full lg:max-w-[21rem] lg:justify-self-end lg:grid-rows-[auto_minmax(0,1fr)]">
             <FadeIn delay={0.28}>
               <InteractiveSurface
                 glow="warm"
-                className="ambient-ring rounded-[1.8rem] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md sm:p-6"
+                className="ambient-ring rounded-[1.75rem] border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur-md sm:px-5 sm:py-[1.125rem]"
               >
                 <p className="text-[10px] uppercase tracking-[0.34em] text-white/[0.42]">
                   Current focus
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-3.5 flex flex-wrap gap-2">
                   {hero.focus.map((item) => (
                     <Tag key={item}>{item}</Tag>
                   ))}
@@ -80,14 +80,16 @@ export function HeroSection({ person, hero }: HeroSectionProps) {
                 glow="cool"
                 className="ambient-ring h-full overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.03] p-2.5 backdrop-blur-md"
               >
-                <div className="relative aspect-[4/4.45] overflow-hidden rounded-[1.45rem] lg:h-full lg:min-h-0 lg:aspect-auto">
+                <div className="relative h-full min-h-[22rem] overflow-hidden rounded-[1.45rem] sm:min-h-[24rem] lg:min-h-[28rem]">
                   <Image
                     src={hero.photo.src}
                     alt={hero.photo.alt}
-                    fill
+                    width={900}
+                    height={1100}
                     priority
-                    sizes="(max-width: 1024px) 100vw, 348px"
-                    className="object-cover object-[center_18%]"
+                    unoptimized
+                    sizes="(max-width: 1024px) 100vw, 336px"
+                    className="h-full w-full object-cover object-[center_18%]"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),transparent_28%,rgba(5,6,8,0.28)_100%)]" />
                 </div>
