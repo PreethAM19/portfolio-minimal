@@ -17,7 +17,7 @@ export function HeroSection({ person, hero }: HeroSectionProps) {
   return (
     <section id="top" className="relative pt-28 sm:pt-36">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(340px,0.8fr)] lg:items-end lg:gap-12">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.14fr)_minmax(280px,0.64fr)] lg:items-stretch lg:gap-10 xl:grid-cols-[minmax(0,1.12fr)_minmax(300px,0.62fr)]">
           <div className="max-w-5xl">
             <RevealText
               as="h1"
@@ -58,16 +58,16 @@ export function HeroSection({ person, hero }: HeroSectionProps) {
             </FadeIn>
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-4 sm:gap-5 lg:h-full lg:max-w-[21.75rem] lg:justify-self-end lg:grid-rows-[auto_minmax(0,1fr)]">
             <FadeIn delay={0.28}>
               <InteractiveSurface
                 glow="warm"
-                className="ambient-ring rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md sm:p-7"
+                className="ambient-ring rounded-[1.8rem] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-md sm:p-6"
               >
                 <p className="text-[10px] uppercase tracking-[0.34em] text-white/[0.42]">
                   Current focus
                 </p>
-                <div className="mt-5 flex flex-wrap gap-2.5">
+                <div className="mt-4 flex flex-wrap gap-2">
                   {hero.focus.map((item) => (
                     <Tag key={item}>{item}</Tag>
                   ))}
@@ -78,16 +78,16 @@ export function HeroSection({ person, hero }: HeroSectionProps) {
             <FadeIn delay={0.36}>
               <InteractiveSurface
                 glow="cool"
-                className="ambient-ring overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] p-3 backdrop-blur-md"
+                className="ambient-ring h-full overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.03] p-2.5 backdrop-blur-md"
               >
-                <div className="relative aspect-[4/4.8] overflow-hidden rounded-[1.55rem]">
+                <div className="relative aspect-[4/4.45] overflow-hidden rounded-[1.45rem] lg:h-full lg:min-h-0 lg:aspect-auto">
                   <Image
                     src={hero.photo.src}
                     alt={hero.photo.alt}
                     fill
                     priority
-                    sizes="(max-width: 1024px) 100vw, 420px"
-                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 348px"
+                    className="object-cover object-[center_18%]"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),transparent_28%,rgba(5,6,8,0.28)_100%)]" />
                 </div>

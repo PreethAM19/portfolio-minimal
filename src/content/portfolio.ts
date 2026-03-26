@@ -184,7 +184,7 @@ export const portfolioData = {
       {
         title: "Visitor Management Platform",
         description:
-          "Built an in-house Visitor Management Platform using Next.js, React, FastAPI, Firebase / Firestore, and LDAP SSO to replace a commercial solution, reducing gate processing delays by 40%.",
+          "Built an in-house visitor platform with Next.js, FastAPI, Firebase / Firestore, and LDAP SSO, replacing a commercial system and reducing gate delays by 40%.",
         stack: ["Next.js", "React", "FastAPI", "Firebase", "Firestore", "LDAP"],
         links: [
           { label: "GitHub", href: null },
@@ -197,7 +197,7 @@ export const portfolioData = {
       {
         title: "AI Chatbot for Sniffi",
         description:
-          "An authenticated AI assistant for navigation, booking, and tele-consults, integrated into a Flutter app with cloud-backed services.",
+          "Built an authenticated AI assistant for navigation, booking, and tele-consults, integrated into a Flutter app with AWS-backed services.",
         stack: ["Python", "Mistral LLM", "AWS ECS", "Lambda", "JWT"],
         links: [
           { label: "GitHub", href: null },
@@ -210,7 +210,7 @@ export const portfolioData = {
       {
         title: "Voice AI Prototypes",
         description:
-          "Built voice-enabled assistant prototypes including an Amazon Alexa voice assistant and a voice-based selector interface for guided interactions and retrieval-driven user flows using LLM backends.",
+          "Built voice-driven prototypes including an Alexa assistant and selector interface for guided, retrieval-backed interactions with LLM-powered flows.",
         stack: ["Alexa", "Python", "LLMs", "Prompt Flows", "Voice Interfaces"],
         links: [
           { label: "GitHub", href: null },
