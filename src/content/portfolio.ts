@@ -67,7 +67,8 @@ export const portfolioData = {
     lines: ["Preetham Raj", "Ramraj"],
     focus: [
       "Full Stack applications",
-      "Agentic AI Products and workflows",
+      "AWS",
+      "Agentic AI workflows",
       "MLOps",
     ],
     primaryAction: {
@@ -123,7 +124,7 @@ export const portfolioData = {
         ],
       },
       {
-        period: "Oct 2023 - Present",
+        period: "Oct 2023 - Feb 2026",
         role: "Senior Software Engineer",
         organization: "IIIT Hyderabad",
         location: "Hyderabad, India",
@@ -134,8 +135,8 @@ export const portfolioData = {
         ],
       },
       {
-        period: "Jan 2025 - Present",
-        role: "Full-Stack Lead / AI Consultant",
+        period: "Jan 2025 - Dec 2025",
+        role: "AI Consultant",
         organization: "Sniffi",
         location: "Remote",
         highlights: [
