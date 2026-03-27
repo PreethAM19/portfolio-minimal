@@ -115,8 +115,8 @@ export const portfolioData = {
       {
         period: "Nov 2025 - Present",
         role: "AI Lead / Full-Stack Engineer",
-        organization: "UPSY",
-        location: "Remote",
+        organization: "UPSY (AI edtech platform, seed-stage)",
+        location: "Pune, Maharashtra (Remote)",
         highlights: [
           "Defined and shipped four core AI features from zero: course recommender, readiness and experience-fit scoring, resume-brochure parsing, and bridge-learning paths using LangGraph-based agentic workflows and structured LLM extraction.",
           "Designed OCR and document parsing pipelines with PaddleOCR-VL plus LLM-assisted extraction to normalize resumes and brochures into structured skill signals with validation and confidence scoring.",
@@ -137,8 +137,8 @@ export const portfolioData = {
       {
         period: "Jan 2025 - Dec 2025",
         role: "AI Consultant",
-        organization: "Sniffi",
-        location: "Remote",
+        organization: "Sniffi (health-tech startup)",
+        location: "Pune, Maharashtra (Remote)",
         highlights: [
           "Led architecture and delivery of an AI-powered chatbot with prompt flows, intent routing, and fallback logic using a Python and Mistral LLM backend on AWS ECS and Lambda with JWT-authenticated APIs.",
           "Integrated the chatbot into a Flutter app for navigation, booking, and tele-consults, coordinating backend architecture, LLM design, and client delivery end to end in three months.",
@@ -188,9 +188,9 @@ export const portfolioData = {
           "Built an in-house visitor platform with Next.js, FastAPI, Firebase / Firestore, and LDAP SSO, replacing a commercial system and reducing gate delays by 40%.",
         stack: ["Next.js", "React", "FastAPI", "Firebase", "Python", "PHP","LDAP"],
         links: [
-          { label: "GitHub", href: null },
-          { label: "Live", href: null },
-          { label: "Case Study", href: null },
+          { label: "GitHub", href: "https://github.com/PreethAM19/visitors" },
+          { label: "Live", href: "https://ims.iiit.ac.in/visitors" },
+    
         ],
         accent: "cool",
         visual: "visitor",
@@ -201,9 +201,9 @@ export const portfolioData = {
           "Built an authenticated AI assistant for navigation, booking, and tele-consults, integrated into a Flutter app with AWS-backed services.",
         stack: ["Python", "Mistral LLM", "AWS ECS", "Lambda", "JWT"],
         links: [
-          { label: "GitHub", href: null },
+          { label: "GitHub", href: "https://github.com/PreethAM19/sniffi-chatbot" },
           { label: "Live", href: null },
-          { label: "Case Study", href: null },
+   
         ],
         accent: "warm",
         visual: "sniffi",
@@ -214,9 +214,9 @@ export const portfolioData = {
           "Built voice-driven prototypes including an Alexa assistant and selector interface for guided, retrieval-backed interactions with LLM-powered flows.",
         stack: ["Alexa", "Python", "MFCC Feature Extraction", "CNN", "PyTorch"],
         links: [
-          { label: "GitHub", href: null },
+          { label: "GitHub", href: "https://github.com/PreethAM19/voice-ai-prototypes" },
           { label: "Live", href: null },
-          { label: "Case Study", href: null },
+    
         ],
         accent: "cool",
         visual: "voice",
