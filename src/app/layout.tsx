@@ -14,12 +14,12 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Preetham Raj Ramraj | Full-Stack Engineer",
+    default: "P. | Preetham Raj Ramraj",
     template: "%s | Preetham Raj Ramraj",
   },
   description:
     "Full-Stack Engineer building production web platforms, cloud-native systems, and AI-powered product features across Next.js, TypeScript, Python, FastAPI, AWS, and Docker.",
-  applicationName: "Preetham Raj Ramraj Portfolio",
+  applicationName: "P.",
   alternates: {
     canonical: "/",
   },

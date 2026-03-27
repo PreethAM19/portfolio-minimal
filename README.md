@@ -107,6 +107,30 @@ git push origin main
 
 9. Redeploy once after adding that variable.
 
+### Optional shared view counter
+
+The site includes a subtle shared view counter at the bottom of the contact section.
+
+To enable it:
+
+1. Create a Redis database in Upstash.
+2. Copy the REST URL and REST token from Upstash.
+3. Add these environment variables in Vercel:
+
+- `UPSTASH_REDIS_REST_URL`
+- `UPSTASH_REDIS_REST_TOKEN`
+- `VIEW_COUNTER_KEY`
+
+Example:
+
+```bash
+UPSTASH_REDIS_REST_URL=https://your-instance.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-token
+VIEW_COUNTER_KEY=portfolio:views:preetham-raj.info
+```
+
+The counter increments once per browser session and hides itself automatically if the Redis variables are missing.
+
 ### Optional custom domain
 
 If you later buy a custom domain, add it in:

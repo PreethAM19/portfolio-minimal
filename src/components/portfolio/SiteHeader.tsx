@@ -16,9 +16,16 @@ export function SiteHeader({ name, navigation }: SiteHeaderProps) {
         <div className="mx-auto flex items-center justify-between gap-4 rounded-full border border-white/10 bg-black/25 px-4 py-3 backdrop-blur-xl sm:px-5">
           <Link
             href="#top"
-            className="max-w-[11rem] truncate text-sm font-semibold tracking-[0.14em] text-white/[0.86] sm:max-w-none"
+            aria-label={name}
+            title={name}
+            className="flex items-center gap-3 text-white/[0.88]"
           >
-            {name}
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[radial-gradient(circle_at_top,rgba(207,180,134,0.22),rgba(255,255,255,0.02)_72%)] font-display text-sm font-semibold tracking-[-0.05em] text-white">
+              P.
+            </span>
+            <span className="text-sm font-semibold tracking-[0.18em] text-white/[0.86]">
+              Preetham Raj Ramraj
+            </span>
           </Link>
 
           <nav

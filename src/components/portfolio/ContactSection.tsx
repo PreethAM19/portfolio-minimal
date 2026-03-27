@@ -7,6 +7,8 @@ import { InteractiveSurface } from "@/components/ui/InteractiveSurface";
 import { FadeIn } from "@/components/ui/motion";
 import { Tag } from "@/components/ui/Tag";
 
+import { ViewCounter } from "./ViewCounter";
+
 type ContactSectionProps = {
   contact: ContactContent;
 };
@@ -69,6 +71,10 @@ export function ContactSection({ contact }: ContactSectionProps) {
                   ),
                 )}
               </div>
+            </div>
+
+            <div className="mt-10">
+              <ViewCounter />
             </div>
           </InteractiveSurface>
         </FadeIn>
